@@ -1,4 +1,4 @@
-ICP备案信息查询API接口  
+##ICP备案信息查询API接口  
 采用管局官网备案接口，事实同步最新ICP备案数据
   
 请求示例：https://check.lzfh.com/api/icp.php?domain=  
