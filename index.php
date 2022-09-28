@@ -22,20 +22,24 @@ $natureName = $query->natureName;
 if (!$token) {
     $icp = "服务器请求频率过高，请稍后再试";
     $msg = "查询失败";
-    $code = "0";
+    $code = 0;
+    $status = -1;
 } elseif (!$icp) {
     $icp = "未备案";
+    $status = 0;
     $msg = "查询成功";
-    $code = "1";
+    $code = 1;
 } else {
+    $status = 1;
     $msg = "查询成功";
-    $code = "1";
+    $code = 1;
 }
 $json = array(
     'icp' => $icp,
     'unitName' => $unitName,
     'natureName' => $natureName,
     'msg' => $msg,
+    'status'=>$status,
     'result' => $code
 );
 print_r(json_encode($json, JSON_UNESCAPED_UNICODE));
